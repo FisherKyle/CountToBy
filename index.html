@@ -10,21 +10,19 @@
    <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Count to _ by increments of _</h1>
     <div class="container">
     <form id="countBy">
       <div class="form-group">
-        <label for="numberOne">Please enter a bigger number to count up to: </label>
-        <input id="numberOne" class="form-control" type="text">
+        <label for="countToInput">What number shall we count to:</label>
+        <input id="countToInput" class="form-control" type="text">
       </div>
       <div class="form-group">
-        <label for="numberTwo">Please enter a smaller number to count by: </label>
-        <input id="numberTwo" class="form-control" type="text">
+        <label for="countByInput">By what increment?:</label>
+        <input id="countByInput" class="form-control" type="text">
       </div>
       <button type="submit" class="btn btn-success">Submit</button>
-        <!-- <p>Here are your results: <span id="resultOutput"></span></p> -->
     </form>
-    <ul id="ulHide"></ul>
+    <ul></ul>
     </div>
   </body>
 </html>

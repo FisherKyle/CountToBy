@@ -2,27 +2,28 @@ $(document).ready(function() {
   $("form#countBy").submit(function(event) {
     event.preventDefault();
 
-    var countToNumber = parseInt($("#numberOne").val());
-    var countByNumber = parseInt($("#numberTwo").val());
+    var countToNumber = parseInt($("#countToInput").val());
+    var countByNumber = parseInt($("#countByInput").val());
 
     $("ul").html("");
 
-    for (var index = countByNumber; index <= countToNumber; index += countByNumber) {
-      $("ul").append("<li>" + index + "</li>");
-      // $("#resultOutput").text(index ",")
+    if (countByNumber <= 0 || countToNumber <= 0) {
+      alert("Please refrain from attempting to count to or by negative numbers. Stay posi.")
+      clearThis(countByNumber);
+      clearThis(countToNumber);
+    };
+
+    for (var currentValue = countByNumber; currentValue <= countToNumber; currentValue += countByNumber) {
+      $("ul").append("<li>" + currentValue + "</li>");
     };
 
     if (countByNumber > countToNumber) {
-      alert("You are attempting to count by a number that is larger than the number that will be counted to.");
+      alert("You are attempting to count by a number that is larger than the number that will be counted to. Try again!");
     };
 
-    if (isNaN(index)) {
-      alert("Please enter a number and try again!");
+    if (isNaN(currentValue)) {
+      alert("Your input held no numerical value. Please, try again.");
     };
-
-
-
-    console.log(countByNumber)
   });
 });
 
