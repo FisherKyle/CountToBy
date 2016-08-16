@@ -1,6 +1,28 @@
 $(document).ready(function() {
-  $("form#sorter").submit(function(event) {
+  $("form#countBy").submit(function(event) {
     event.preventDefault();
+
+    var countToNumber = parseInt($("#numberOne").val());
+    var countByNumber = parseInt($("#numberTwo").val());
+
+    $("ul").html("");
+
+    for (var index = countByNumber; index <= countToNumber; index += countByNumber) {
+      $("ul").append("<li>" + index + "</li>");
+      // $("#resultOutput").text(index ",")
+    };
+
+    if (countByNumber > countToNumber) {
+      alert("You are attempting to count by a number that is larger than the number that will be counted to.");
+    };
+
+    if (isNaN(index)) {
+      alert("Please enter a number and try again!");
+    };
+
+
+
+    console.log(countByNumber)
   });
 });
 
